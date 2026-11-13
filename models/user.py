@@ -10,10 +10,10 @@ class UserModel(bd.Model):
     password = bd.Column(bd.String(255), nullable=False)
     tipo = bd.Column(bd.String(20), default="utilizador", nullable=False)
 
-    # Um utilizador pode ter várias tarefas.
+    # Um utilizador pode ter várias tarefas
     tarefas = bd.relationship("TaskModel", back_populates="utilizador")
 
-    # Construtor da classe.
+    # Construtor da classe
     def __init__(self, username, email, password, tipo="utilizador"):
         self.username = username
         self.email = email

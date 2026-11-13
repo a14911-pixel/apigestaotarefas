@@ -1,0 +1,24 @@
+meta {
+  name: Criar Tarefa
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://127.0.0.1:5000/tarefas
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc5NDU2NDE2OSwianRpIjoiMGVlZTg5ZWItOGRmMC00ZDgwLWI1MGEtNDNjNDExZmQyZTUwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3OTQ1NjQxNjksImNzcmYiOiI5YjVlMWQ5NC01NjIyLTQxNTUtOTA1Yy03MTJlYTAyYzE4ZTIiLCJleHAiOjE3OTQ1NjUwNjl9.p8y2dTOm9FtAPPk56i_FihCRiI3HGUXuTiM94paWxVc
+}
+
+body:json {
+  {
+    "titulo": "A minha tarefa",
+    "descricao": "Tarefa de teste",
+    "estado": "Pendente"
+  }
+  
+}

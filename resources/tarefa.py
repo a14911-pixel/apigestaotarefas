@@ -10,7 +10,7 @@ class Tarefas(Resource):
     argumentos.add_argument("descricao", type=str)
     argumentos.add_argument("estado", type=str)
 
-    # Listar tarefas.
+    # Listar tarefas
     @jwt_required()
     def get(self):
         x = int(get_jwt_identity())
@@ -23,7 +23,7 @@ class Tarefas(Resource):
 
         return {"tarefas": [tarefa.json() for tarefa in tarefas]}, 200
 
-    # Inserir uma tarefa.
+    # Inserir uma tarefa
     @jwt_required()
     def post(self):
         dados = Tarefas.argumentos.parse_args()
@@ -49,7 +49,7 @@ class Tarefa(Resource):
     argumentos.add_argument("descricao", type=str)
     argumentos.add_argument("estado", type=str)
 
-    # Consultar, atualizar ou eliminar uma tarefa específica.
+    # Consultar, atualizar ou eliminar uma tarefa específica
     @jwt_required()
     def get(self, id_tarefa):
         x = int(get_jwt_identity())
